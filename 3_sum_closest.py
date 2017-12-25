@@ -16,7 +16,7 @@
 
 from itertools import combinations
 def sum_3_closest_naive(S, target):
-    combs_book = dict(((abs(target-sum(combo)), combo)) for combo in combinations(S,3))
+    combs_book = dict(((abs(target - sum(combo)), combo) for combo in combinations(S,3))
     return sum(combs_book[min(combs_book)])
 
 # Approach 2: sort the array first and choose three values to sum selectively
@@ -44,7 +44,6 @@ def sum_3_closest(S, target):
             elif c_sum < target:
                 j += 1
             else:
-                pass
                 return c_sum
             sums.append(c_sum)
     return min(sums, key = lambda x: abs(target - x))
